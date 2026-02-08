@@ -54,15 +54,22 @@ button {
 }
 
 #catContainer img {
-    width: 250px;
+    width: 260px;
     max-width: 90%;
+    border-radius: 15px;
 }
 
 #warningText {
-    font-size: 22px;
-    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
     color: white;
-    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 /* Floating hearts */
@@ -89,16 +96,13 @@ button {
 <button id="noBtn">No</button>
 
 <div id="catContainer">
-    <img src="https://i.imgur.com/8QfQZ7C.png">
-    <div id="warningText">Don't mess with me 😾</div>
+    <img src="Screenshot_20260208-222624.png">
+    <div id="warningText">Don't mess with me 😼</div>
 </div>
 
-<!-- Hidden YouTube player starting at meme peak -->
-<iframe id="music"
-width="0"
-height="0"
+<!-- Music -->
+<iframe width="0" height="0"
 src="https://www.youtube.com/embed/1vLzB6aRz9Q?start=85&autoplay=1&loop=1&playlist=1vLzB6aRz9Q"
-frameborder="0"
 allow="autoplay">
 </iframe>
 
@@ -109,7 +113,6 @@ const catContainer = document.getElementById("catContainer");
 
 let speedMultiplier = 1;
 
-// Make No button run faster each time
 function moveButton() {
     const maxX = window.innerWidth - 100;
     const maxY = window.innerHeight - 60;
@@ -132,7 +135,6 @@ noBtn.addEventListener("touchstart", function(e){
     moveButton();
 });
 
-// Yes button
 yesBtn.addEventListener("click", function(){
     document.body.innerHTML = `
         <h1 style="margin-top:100px; color:white;">
@@ -142,7 +144,6 @@ yesBtn.addEventListener("click", function(){
     `;
 });
 
-// Floating hearts generator
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
