@@ -96,7 +96,7 @@ button {
 <button id="noBtn">No</button>
 
 <div id="catContainer">
-    <img src="Screenshot_20260208-222624.png">
+    <img src="Screenshot_20260208-234101.png">
     <div id="warningText">Don't mess with me 😼</div>
 </div>
 
@@ -129,7 +129,7 @@ function moveButton() {
     noBtn.style.transition = 0.15 / speedMultiplier + "s";
 }
 
-noBtn.addEventListener("mouseover", mveButton);
+noBtn.addEventListener("mouseover", moveButton);
 noBtn.addEventListener("touchstart", function(e){
     e.preventDefault();
     moveButton();
